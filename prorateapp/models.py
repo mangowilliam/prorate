@@ -11,12 +11,27 @@ class Profile(models.Model):
     email = models.EmailField()
     phone_number = models.CharField(max_length = 10)
     user = models.OneToOneField(User, on_delete=models.CASCADE,blank=True, related_name='profile') 
+    
+    
+    def __str__(self):
+            return self.user.username
+    
+    def save_profile(self):
+        self.save()
+    
 
-
-class Projects(models.Model):
+class Project(models.Model):
     title = models.CharField(max_length =30)
     image = models.ImageField(default = 'default.jpg',upload_to='images/')
     description = models.CharField(max_length =200)
-    link = models.URLField()
+    link = models.URLField(blank=True, null=True)
     ratings = models.IntegerField(blank=True, null=True)
     profile = models.ForeignKey(User, on_delete=models.CASCADE) 
+    pub_date = models.DateTimeField(auto_now_add=True)
+
+    
+    def __str__(self):
+        return self.title
+    
+    def save_project(self):
+        self.save()
