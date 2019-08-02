@@ -39,3 +39,7 @@ class Project(models.Model):
     def get_projects(cls):
         projects = cls.objects.all()
         return projects
+    @classmethod
+    def search_project(cls, repos):
+        project = cls.objects.filter(title__icontains=repos)
+        return project

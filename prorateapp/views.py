@@ -19,3 +19,16 @@ def register(request):
     else:
         form =UserRegistrationForm()
     return render(request,'registration/registration_form.html',{'form':form}) 
+def search_project(request):
+    
+    if 'projects' in request.GET and request.GET["projects"]:
+        repos = request.GET.get("projects")
+        searched_projects = Project.search_project(repos)
+        print(searched_projects)
+        message = f"{repos}"
+
+        return render(request, 'search.html', {"message": message, "project": searched_projects})
+
+    else:
+        message = "You haven't searched for any project"
+        return render(request, 'search.html', {"message": message})
