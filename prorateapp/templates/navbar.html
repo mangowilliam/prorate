@@ -40,10 +40,10 @@
          
         </div>
         <div class="col-sm-6 col-md-6">
-          
+          {% if user.is_authenticated %}
             <ul style="list-style: none;">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Exit
                           <span class="caret"></span>
                       </a>
                 <ul class="dropdown-menu" role="menu">
@@ -51,26 +51,24 @@
                     <a href="/accounts/password/change">Change Password</a>
                   </li>
                   <li>
-                    <a href="{%url 'home'%}">Home</a>
-                  </li>
-                  <li>
                     <a href="/logout">Logout</a>
                   </li>
                 </ul>
               </li>
             </ul>
-            
-            <li>
-              <a class='btn btn-default' href="/accounts/login">L</a>
+            {% else %}
+            <li style="list-style: none;">
+              <a class='btn btn-default' href="/accounts/login">Login</a> &nbsp;&nbsp;
+              <a class='btn btn-default' href="{%url 'signup'%}">Sign up</a>
             </li>
-
+            {% endif %}
           </div>
 
         <ul class="navbar-right">
           <li style="list-style: none;">
-            <a class="nav-link" href="{%url 'home'%}"><i class="fa fa-fw fa-user" width='90px'></i></<a>
+            <a class="nav-link" href="{%url 'home'%}"><i class="fa fa-fw fa-user"></i></<a>
               &nbsp;&nbsp;
-             <a href="{%url 'home'%}">Projects</a>
+            <a   class='btn btn-default' href="{%url 'home'%}">Projects</a>
           </li>
           
         </ul>
