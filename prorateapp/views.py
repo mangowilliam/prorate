@@ -2,11 +2,13 @@ from django.shortcuts import render,redirect
 import datetime as dt
 from django.contrib.auth.decorators import login_required
 from . forms import UserRegistrationForm
+from . models import Project
 # Create your views here.
 
 
 def home(request):
-    return render(request, 'home.html')
+    projects=Project.get_projects()
+    return render(request, 'home.html',{"projects":projects})
 
 def register(request):
     if request.method == "POST":

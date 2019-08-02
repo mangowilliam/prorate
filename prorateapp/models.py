@@ -35,3 +35,7 @@ class Project(models.Model):
     
     def save_project(self):
         self.save()
+    @classmethod
+    def get_projects(cls):
+        projects = cls.objects.all()
+        return projects
