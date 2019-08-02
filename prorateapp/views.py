@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 import datetime as dt
 from django.contrib.auth.decorators import login_required
-from . forms import UserRegistrationForm
+from . forms import UserRegistrationForm,AddProjectForm
 from . models import Project
 # Create your views here.
 
@@ -32,3 +32,16 @@ def search_project(request):
     else:
         message = "You haven't searched for any project"
         return render(request, 'search.html', {"message": message})
+def add_project(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = AddProjectForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = current_user
+            post.save()
+        return redirect('index')
+
+    else:
+        form = AddProjectForm()
+    return render(request, 'addproject.html',{"form": form})
