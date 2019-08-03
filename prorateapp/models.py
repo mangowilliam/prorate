@@ -43,3 +43,7 @@ class Project(models.Model):
     def search_project(cls, repos):
         project = cls.objects.filter(title__icontains=repos)
         return project
+    @classmethod
+    def filter_by_user_id(cls,user_id):
+        projects = Project.objects.filter(profile=user_id)
+        return projects

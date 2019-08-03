@@ -49,3 +49,10 @@ def add_project(request):
     else:
         form = AddProjectForm()
     return render(request, 'newproject.html',{"form": form})
+
+@login_required(login_url='/accounts/login/')
+def profile(request):
+    current_user = request.user
+    id = current_user.id
+    project = Project.filter_by_user_id(id)
+    return render(request, "profile/profile.html", {"project":project})

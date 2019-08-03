@@ -7,8 +7,11 @@ body{
   h1{
     color: black;
   }
-  form{
-    background-color: #ffbb93;
+  hr{ 
+    height: 1px;
+    color: #000;
+    background-color:#000;
+    border: none;
   }
 
   @media (min-width: 768px) {
