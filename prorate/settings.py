@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'prorateapp',
     'bootstrap3',
     'tinymce',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -8,7 +8,8 @@
         <img class="img-circle" alt="Cinque Terre" src='{{user.profile.image.url}}'>
         <h2 class='account-heading'>{{user.username}}</h2>
         <p class='text-secondary'>{{user.email}}</p>
-        <a href="{%url 'user-up'%}">Update your details</a>
+        <a href="{%url 'user-up'%}">Update your details</a><br>
+        <a href="{%url 'image'%}">Update image</a>
     </div>
     <hr>
     {% for project in project %}
