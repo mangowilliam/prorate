@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 import datetime as dt
 from django.contrib.auth.decorators import login_required
-from . forms import UserRegistrationForm,AddProjectForm
+from . forms import UserRegistrationForm,AddProjectForm,UserUpdateForm
 from . models import Project,Profile
 from django.http import HttpResponse, Http404,HttpResponseRedirect
 # Create your views here.
@@ -56,3 +56,13 @@ def profile(request):
     id = current_user.id
     project = Project.filter_by_user_id(id)
     return render(request, "profile/profile.html", {"project":project})
+
+def user_update(request):
+    if request.method == 'POST':
+        form = UserUpdateForm(request.POST,instance = request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+    else:
+        form = UserUpdateForm(instance = request.user)
+    return render(request, "profile/user-up.html",{"form":form})
