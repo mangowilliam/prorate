@@ -13,4 +13,4 @@ class UserRegistrationForm(UserCreationForm):
 class AddProjectForm(forms.ModelForm):
      class Meta:
         model = Project
-        fields = ['title','image','description','link','ratings','profile']
+        exclude = ['pub_date']
