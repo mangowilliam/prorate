@@ -22,7 +22,7 @@
             <span class=icon-bar></span>
           </button>
 
-          <a <span class="navbar-brand" href="{%url 'home'%}">Prorates</span></a>
+          <a <span class="navbar-brand btn btn-warning" href="{%url 'home'%}">Prorates</span></a>
       </div>
       
       <div class='navbar-collapse collapse '>
@@ -43,7 +43,7 @@
           {% if user.is_authenticated %}
             <ul style="list-style: none;">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Exit
+                <a href="#" class="dropdown-toggle btn btn-warning" data-toggle="dropdown" role="button" aria-expanded="false">Exit
                           <span class="caret"></span>
                       </a>
                 <ul class="dropdown-menu" role="menu">
@@ -58,17 +58,17 @@
             </ul>
             {% else %}
             <li style="list-style: none;">
-              <a class='btn btn-default' href="/accounts/login">Login</a> &nbsp;&nbsp;
-              <a class='btn btn-default' href="{%url 'signup'%}">Sign up</a>
+              <a class='btn btn-warning' href="/accounts/login">Login</a> &nbsp;&nbsp;
+              <a class='btn btn-warning' href="{%url 'signup'%}">Sign up</a>
             </li>
             {% endif %}
           </div>
 
         <ul class="navbar-right">
           <li style="list-style: none;">
-            <a class="nav-link" href="{%url 'profile'%}"><i class="fa fa-fw fa-user"></i></<a>
-              &nbsp;&nbsp;
-            <a   class='btn btn-default' href="{%url 'addproject'%}">Add Projects</a>
+            <a class="nav-link btn btn-warning" href="{%url 'profile'%}"><i class="fa fa-fw fa-user"></i></<a>
+            <a class='btn btn-warning' href="{%url 'addproject'%}">Add Projects</a>
+            <a class='btn btn-warning' href="{%url 'details'%}">create profile</a>
           </li>
           
         </ul>

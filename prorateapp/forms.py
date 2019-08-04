@@ -21,7 +21,7 @@ class UserUpdateForm(forms.ModelForm):
         model = User
         fields = ['username','email']
 
-class ProfileUpdateForm(forms.ModelForm):
+class proForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ['user']
+        exclude = ['username']

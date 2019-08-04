@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 import datetime as dt
 from django.contrib.auth.decorators import login_required
-from . forms import UserRegistrationForm,AddProjectForm,UserUpdateForm,ProfileUpdateForm
+from . forms import UserRegistrationForm,AddProjectForm,UserUpdateForm,proForm
 from . models import Project,Profile
 from django.http import HttpResponse, Http404,HttpResponseRedirect
 # Create your views here.
@@ -69,14 +69,15 @@ def user_update(request):
     return render(request, "profile/user-up.html",{"form":form})
 
 @login_required(login_url='/accounts/login/')
-def image(request):
-    if request.method == 'POST':
-        form = ProfileUpdateForm(request.POST,request.FILES)
+def myprofile(request):
+    current_user = request.user
+    if request.method =='POST':
+        form = proForm(request.POST,request.FILES)
         if form.is_valid():
-            image=form.save(commit=False)
-            image.profile=request.user
-            image.save()
-            return redirect('profile',username=request.user)
+            myprofile=form.save(commit=False)
+            myprofile.username =current_user
+            myprofile.save()
+            return redirect('profile')
     else:
-        form = ProfileUpdateForm()
-    return render(request,'profile-up',{'form':form})
+        form=proForm()
+    return render(request, 'profile/profile-up.html',{"form":form})

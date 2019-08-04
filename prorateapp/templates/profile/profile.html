@@ -5,11 +5,13 @@
 <div class="container">
 
     <div class="row-md-12 "">
-        <img class="img-circle" alt="Cinque Terre" src='{{user.profile.image.url}}'>
+        <img class="gallery-image" alt=""  width=30 height=30 src='{{user.profile.image.url}}'>
         <h2 class='account-heading'>{{user.username}}</h2>
+        <p class='text-secondary'>{{user.bio}}</p>
         <p class='text-secondary'>{{user.email}}</p>
         <a href="{%url 'user-up'%}">Update your details</a><br>
-        <a href="{%url 'image'%}">Update image</a>
+        <a href="{%url 'details'%}">profile add</a>
+      
     </div>
     <hr>
     {% for project in project %}
