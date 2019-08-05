@@ -28,6 +28,7 @@ Users would like to:
 |add a project        |project instances        |new project             |
 |create profile       |your details             |new profile             |
 |view your profile    |click on fa-user nav icon|your profile/projects   |
+|rate a project       |click on project title   |rating page             |
 
 ## SetUp / Installation Requirements
 * Prerequisites
