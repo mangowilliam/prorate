@@ -10,10 +10,12 @@
             <div class="card ">
                 
                 <p>{{ projects_item.title}}</p>
+                
                 <img src="{{ projects_item.image.url }}" height="250px" width="350px" alt="Image" />
                 <p>{{ projects_item.description }}</p>
                 <p><i class="fa fa-heart"></i>{{ projects_item.ratings }}</p>
                 <p>by {{ projects_item.profile }}</p>
+                 <img class="gallery-image" alt=""  width=30 height=30 src='{{profile.image.url}}'>
                 <p>on {{ projects_item.pub_date }}</p>
                 <a href = "{{ projects_item.link}}">live site</a>
 
