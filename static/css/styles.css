@@ -7,6 +7,46 @@ body{
   h1{
     color: black;
   }
+  .rating{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display:flex;
+    text-align: center
+  }
+  .rating input{
+    display:none;
+
+  }
+  .rating label{
+    display:block;
+    cursor:pointer;
+    width: 50px;
+    background:#ccc;
+
+  }
+  .ratings label:before{
+    content:'\f005';
+    font-family: fontAwesome;
+    position:relative;
+    display:block;
+    color:#101010;
+  }
+  .ratings label:after{
+    content:'\f005';
+    font-family: fontAwesome;
+    position: absolute;
+    display:block;
+    color :#1f9cff;
+    opacity: 1;
+    transition: .5s; 
+  }
+  .ratings label:hover:after,
+  .ratings label:hover ~ label:after
+  .ratings input:checked ~ label:after{
+    opacity: 1;
+  }
   hr{ 
     height: 1px;
     color: #000;

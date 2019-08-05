@@ -18,7 +18,7 @@
     <div class="row-md-12">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
             <div class="card ">
-                <p>{{ projects.title}}</p>
+                <a href="{%url 'details'%}"><p>{{ projects.title}}</p></a>
                 <img src="{{ project.image.url }}" height="250px" width="350px" alt="Image" />
                 <p>{{ project.description }}</p>
                 <p><i class="fa fa-heart"></i>{{ project.ratings }}</p>

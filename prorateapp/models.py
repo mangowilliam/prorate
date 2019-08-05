@@ -61,3 +61,9 @@ class Project(models.Model):
     def filter_by_user_id(cls,user_id):
         projects = Project.objects.filter(profile=user_id)
         return projects
+    
+    @classmethod
+    def filter_by_title(cls,title):
+        projectd = Project.objects.filter(project=title)
+        return projectd
+    

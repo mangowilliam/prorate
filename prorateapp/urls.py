@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'profile',views.profile,name= 'profile'),
     url(r'update-user',views.user_update,name= 'user-up'),
     url(r'details',views.myprofile,name= 'details'),
+    url(r'projectd',views.projectd,name= 'projectd'),
 ]
 if settings.DEBUG:
     urlpatterns+= static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

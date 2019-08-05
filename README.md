@@ -23,7 +23,7 @@ Users would like to:
 
 |Behaviour	          |          Input	        |Output                  |
 |---------------------|-------------------------|------------------------|
-|Display all projects |signup & login           | a list                 |
+|Display all projects |signup & login           | a list of projects     |
 |To search project    |project title            |project and its objects |
 |add a project        |project instances        |new project             |
 |create profile       |your details             |new profile             |

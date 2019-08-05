@@ -11,7 +11,8 @@ def home(request):
     projects=Project.get_projects()
     return render(request, 'home.html',{"projects":projects})
 
-
+def projectd(request):
+    return render(request, "ratings.html")
 def register(request):
     if request.method == "POST":
         form = UserRegistrationForm(request.POST)
