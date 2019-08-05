@@ -38,7 +38,7 @@ class Project(models.Model):
     def __str__(self):
         return self.title
     
-     class Meta:
+    class Meta:
             ordering =['pub_date']
     
     
